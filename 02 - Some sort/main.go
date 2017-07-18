@@ -24,9 +24,15 @@ func (p people) Swap(i, j int) {
 }
 
 func main() {
-	studygroup := people{"John", "Mariia", "Alex", "Petya", "Nepetya", "Pavel", "Anton"}
+	var studygroup people
 	s := []string{"John", "Mariia", "Alex", "Petya", "Nepetya", "Pavel", "Anton"}
-	sort.Sort(studygroup)
-	fmt.Println(studygroup)
-	fmt.Println(s)
+	i := []int{4, 3, 1, 7, 4, 1, 8, 9, 4, 23, 4}
+	studygroup = s
+	fmt.Println("Original slice: \n", studygroup)
+	sort.Sort(sort.StringSlice(s))
+	fmt.Println("Sorted slice:\n ", s)
+	sort.Sort(sort.Reverse(studygroup))
+	fmt.Println("people type sorted reversely:\n ", studygroup)
+	sort.Sort(sort.IntSlice(i))
+	fmt.Println("Sorted int slice:\n ", i)
 }
